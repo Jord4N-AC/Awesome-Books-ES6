@@ -1,8 +1,5 @@
-const addButton = document.querySelector('#add-btn');
-const bookList = document.getElementsByClassName('book-list')[0];
-const inputTitle = document.querySelector('.title');
-const inputAuthor = document.querySelector('.author');
-const alertMessage = document.querySelector('#alert-message');
+import { addButton, bookList, inputTitle, inputAuthor, alertMessage } from './modules/varibles.js';
+
 let theBooks = [];
 
 class BookObject {
