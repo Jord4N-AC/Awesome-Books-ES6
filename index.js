@@ -1,15 +1,7 @@
-import { addButton, alertMessage } from './modules/varibles.js';
+import { addButton } from './modules/varibles.js';
 import BookObject from './modules/book_class.js';
+import { highLightMessage, noHighlightMessage } from './modules/alert_message.js';
 
-
-
-function highLightMessage() {
-  alertMessage.style.transform = 'scale(1.15)';
-}
-
-function noHighlightMessage() {
-  alertMessage.style.transform = 'scale(1)';
-}
 
 addButton.addEventListener('mousedown', highLightMessage);
 addButton.addEventListener('mouseup', noHighlightMessage);
