@@ -11,3 +11,6 @@ export const contactSection = document.getElementById('contact');
 export const listLink = document.getElementById('list-link');
 export const addNewLink = document.getElementById('add-new-link');
 export const contactLink = document.getElementById('contact-link');
+
+// Date
+export const date = document.getElementById('date');

@@ -44,6 +44,12 @@ body {
   font-weight: bold;
 }
 
+#date {
+  text-align: right;
+  font-weight: bold;
+  padding: 20px;
+}
+
 #books {
   display: block;
 }
