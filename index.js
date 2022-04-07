@@ -5,13 +5,11 @@ import showSection from './modules/shown_section.js';
 
 import { DateTime } from './node_modules/luxon/src/luxon.js';
 
-
 addButton.addEventListener('mousedown', highLightMessage);
 addButton.addEventListener('mouseup', noHighlightMessage);
 addButton.addEventListener('click', BookObject.addBooks);
 
 BookObject.loadBooks();
-
 
 // Single Page Application
 window.addEventListener('hashchange', showSection);
