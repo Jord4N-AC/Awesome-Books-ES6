@@ -1,6 +1,5 @@
 node_modules
 #Webhint
-package-lock.json
 .hintrc
 #Stylelint
 .stylelintrc.json
