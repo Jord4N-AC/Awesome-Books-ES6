@@ -5,7 +5,7 @@
 > **In this project, I built a website that allows users to add and remove books from a list, I built it using js modules and ES6 syntax.**
 > 
 ## Live Link
-See live version [here](https://jord4n-ac.github.io/Awesome-Books-ES6/)
+Live version [here](https://jord4n-ac.github.io/Awesome-Books-ES6/)
 
 ## Built With
 - Major languages
