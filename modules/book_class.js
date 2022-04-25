@@ -12,7 +12,7 @@ export default class BookObject {
   }
 
   add() {
-    function creaateAndAppend(title, author, id) {
+    const creaateAndAppend = (title, author, id) => {
       const bookContainer = document.createElement('div');
       const infoContainer = document.createElement('div');
       const titleBook = document.createElement('h5');
@@ -38,7 +38,7 @@ export default class BookObject {
       bookList.append(bookContainer);
 
       BookObject.remove(removeButton);
-    }
+    };
     creaateAndAppend(this.title, this.author, this.id);
   }
 

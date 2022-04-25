@@ -1,9 +1,9 @@
 import { alertMessage } from './varibles.js';
 
-export function highLightMessage() {
+export const highLightMessage = () => {
   alertMessage.style.transform = 'scale(1.15)';
-}
+};
 
-export function noHighlightMessage() {
+export const noHighlightMessage = () => {
   alertMessage.style.transform = 'scale(1)';
-}
+};
