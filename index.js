@@ -3,7 +3,7 @@ import BookObject from './modules/book_class.js';
 import { highLightMessage, noHighlightMessage } from './modules/alert_message.js';
 import showSection from './modules/shown_section.js';
 
-import { DateTime } from './node_modules/luxon/src/luxon.js';
+import { DateTime } from './modules/luxon.js';
 
 addButton.addEventListener('mousedown', highLightMessage);
 addButton.addEventListener('mouseup', noHighlightMessage);
@@ -15,8 +15,7 @@ BookObject.loadBooks();
 window.addEventListener('hashchange', showSection);
 
 // Date
-function showTime() {
+setInterval(() => {
   const now = DateTime.now();
   date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
-}
-setInterval(showTime, 1000);
+}, 1000);
