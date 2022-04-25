@@ -15,5 +15,8 @@ BookObject.loadBooks();
 window.addEventListener('hashchange', showSection);
 
 // Date
-const now = DateTime.now();
-date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+function showTime() {
+  const now = DateTime.now();
+  date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+}
+setInterval(showTime, 1000);
