@@ -33,13 +33,13 @@
         </section>
 
         <!-- Section 2 -->
-        <form id="form" class="section">
+        <form id="form" class="section" action="">
             <fieldset>
                 <legend id="list">Add a new book</legend>
-                <input type="text" class="title" placeholder="Title" />
-                <input type="text" class="author" placeholder="Author" />
+                <input type="text" class="title" placeholder="Title" autofocus required />
+                <input type="text" class="author" placeholder="Author" required />
                 <div id="alert-message"></div>
-                <button id="add-btn" type="button">Add</button>
+                <input id="add-btn" type="submit" value="Add">
             </fieldset>
         </form>
 
