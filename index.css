@@ -26,7 +26,7 @@ body {
 }
 
 /* Nav-Bar */
-.navbar {
+#navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,19 +42,19 @@ body {
   margin: 0 auto;
 }
 
-.nav-list {
+#nav-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.nav-list a {
+#nav-list a {
   text-decoration: none;
   text-align: center;
   padding: 8px 10px;
 }
 
-.nav-list a:hover {
+#nav-list a:hover {
   text-shadow: 0 0 10px rgb(0, 64, 255);
 }
 
@@ -62,6 +62,7 @@ body {
   font-weight: bold;
 }
 
+/* Date */
 #date {
   text-align: right;
   font-weight: bold;
@@ -70,17 +71,20 @@ body {
 
 /* Section 1 */
 #books {
-  display: block;
+  display: inline-block;
 }
 
 #books-header {
-  text-align: center;
   font-size: 45px;
   font-weight: bolder;
+  text-align: center;
+  margin: 20px 0;
 }
 
-.book-list {
+#book-list {
   border: 2px solid black;
+  overflow: auto;
+  max-height: 300px;
 }
 
 .book-container {
@@ -89,20 +93,22 @@ body {
   align-items: center;
   flex-wrap: wrap;
   background-color: whitesmoke;
-  padding: 20px 40px;
-  border-radius: 8px;
-  margin: 2% auto;
-  box-shadow: 0 0 20px rgb(86, 126, 131);
   max-width: 750px;
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin: 1.5% auto;
+  box-shadow: 0 0 10px rgb(86, 126, 131);
 }
 
 .book-info {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .book-info h5 {
-  margin: 20px auto;
+  margin: auto 0;
+  word-break: break-all;
 }
 
 .book-title {
@@ -217,10 +223,10 @@ input {
   padding: 0 5px;
 }
 
-.Copyright {
+.copyright {
   border: 2px solid black;
   padding: 15px;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #contact {

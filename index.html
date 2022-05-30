@@ -9,24 +9,25 @@
     </head>
     <body>
         <!-- Nav-Bar -->
-        <nav class="navbar">
-            <div>
-                <h3 id="bar-header">Awesome Books</h3>                
-            </div>
-            <div class="nav-list">
-                <a id="list-link" href="#books-header">List</a>
-                <a id="add-new-link" class="add-new" href="#form">Add New</a>
-                <a id="contact-link" href="#contact">Contact</a>
-            </div>
-        </nav>
-
-        <!-- Date -->
-        <div id="date"></div>
+        <div id="header-container">
+            <header id="navbar">
+                <div>
+                    <h3 id="bar-header">Awesome Books</h3>                
+                </div>
+                <nav id="nav-list">
+                    <a id="list-link" href="#books-header">List</a>
+                    <a id="add-new-link" class="add-new" href="#form">Add New</a>
+                    <a id="contact-link" href="#contact">Contact</a>
+                </nav>
+            </header>
+            <!-- Date -->
+            <div id="date"></div>
+        </div>        
   
         <!-- Section 1 -->
         <section id="books" class="section">
             <h1 id="books-header">Awesome Books</h1>
-            <div class="book-list">
+            <div id="book-list">
                 <!-- All books here -->
             </div>
         </section>
@@ -55,7 +56,7 @@
         </section>
   
         <footer>
-            <h5 class="Copyright">Copyright</h5>
+            <h5 class="copyright">Copyright</h5>
         </footer>
 
         <script type="module" src="index.js"></script>
