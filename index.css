@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+/* General Styles */
+.section {
+  display: none;
+}
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -60,6 +66,12 @@ body {
 
 #list-link {
   font-weight: bold;
+}
+
+#add-new-link {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0 5px;
 }
 
 /* Date */
@@ -145,27 +157,22 @@ button {
 
 /* Section 2 */
 form {
-  box-sizing: border-box;
   background-image:
     linear-gradient(
       to bottom right,
       rgba(221, 233, 56, 0.243),
       rgba(197, 77, 233, 0.311)
     );
-  padding: 40px 0;
-  margin: 15% auto;
+  padding: 40px;
+  margin: 20px auto;
   border-radius: 10px;
-  max-width: 500px;
 }
 
 fieldset {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin: 10px auto;
   border: none;
-  max-width: 100px;
 }
 
 legend {
@@ -175,10 +182,9 @@ legend {
 }
 
 input {
-  display: inline-block;
   font-size: 18px;
   padding: 10px;
-  margin: 8px auto;
+  margin: 8px 0;
   width: 350px;
 }
 
@@ -217,18 +223,7 @@ input {
   box-shadow: none;
 }
 
-.add-new {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  padding: 0 5px;
-}
-
-.copyright {
-  border: 2px solid black;
-  padding: 15px;
-  margin: 0;
-}
-
+/* Section 3 */
 #contact {
   max-width: max-content;
   height: 90vh;
@@ -240,6 +235,9 @@ input {
   font-weight: bold;
 }
 
-.section {
-  display: none;
+/* Footer */
+.copyright {
+  border: 2px solid black;
+  padding: 15px;
+  margin: 0;
 }
