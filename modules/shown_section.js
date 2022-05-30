@@ -4,7 +4,7 @@ import {
 
 // Single Page Application
 export default function showSection() {
-  if (window.location.hash === '#books-header') {
+  if (window.location.hash === '#books') {
     booksSection.style.display = 'block';
     addBookSection.style.display = 'none';
     contactSection.style.display = 'none';

@@ -1,8 +1,8 @@
-export const addButton = document.querySelector('#add-btn');
 export const bookList = document.getElementById('book-list');
 export const inputTitle = document.querySelector('.title');
 export const inputAuthor = document.querySelector('.author');
-export const alertMessage = document.querySelector('#alert-message');
+export const addButton = document.getElementById('add-btn');
+export const alertMessage = document.getElementById('alert-message');
 
 // Single Page Application
 export const booksSection = document.getElementById('books');

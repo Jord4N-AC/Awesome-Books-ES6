@@ -1,4 +1,4 @@
-import { addButton, date } from './modules/varibles.js';
+import { addButton, date, addBookSection } from './modules/varibles.js';
 import BookObject from './modules/book_class.js';
 import { highLightMessage, noHighlightMessage } from './modules/alert_message.js';
 import showSection from './modules/shown_section.js';
@@ -17,3 +17,8 @@ window.addEventListener('hashchange', showSection);
 // Date
 const now = DateTime.now();
 date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+
+
+window.addEventListener('click', () => {
+  console.log(addBookSection);
+});
