@@ -225,8 +225,7 @@ input {
 
 /* Section 3 */
 #contact {
-  max-width: max-content;
-  height: 90vh;
+  /* max-width: max-content; */
   margin: 0 auto;
 }
 
@@ -236,7 +235,7 @@ input {
 }
 
 /* Footer */
-.copyright {
+#foot-header {
   border: 2px solid black;
   padding: 15px;
   margin: 0;
