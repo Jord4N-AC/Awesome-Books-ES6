@@ -1,6 +1,7 @@
 import {
   bookList, inputTitle, inputAuthor, alertMessage,
 } from './varibles.js';
+import showSection from './shown_section.js';
 
 let theBooks = [];
 
@@ -86,5 +87,6 @@ export default class BookObject {
         newBook.add(); theBooks.push(newBook);
       });
     }
+    showSection();
   }
 }

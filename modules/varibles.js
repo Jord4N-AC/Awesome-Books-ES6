@@ -8,9 +8,9 @@ export const alertMessage = document.getElementById('alert-message');
 export const booksSection = document.getElementById('books');
 export const addBookSection = document.getElementById('form');
 export const contactSection = document.getElementById('contact');
-export const listLink = document.getElementById('list-link');
-export const addNewLink = document.getElementById('add-new-link');
-export const contactLink = document.getElementById('contact-link');
+
+export const navLinks = document.querySelectorAll('.nav-link');
+export const sections = document.querySelectorAll('.section');
 
 // Date
 export const date = document.getElementById('date');

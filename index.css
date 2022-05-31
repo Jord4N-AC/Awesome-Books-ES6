@@ -5,8 +5,18 @@
 /* General Styles */
 .section {
   display: none;
+  animation: transitionEffect 0.5s;
 }
 
+@keyframes transitionEffect {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: none;
+  }
+}
 
 body {
   display: flex;
@@ -54,24 +64,19 @@ body {
   flex-wrap: wrap;
 }
 
-#nav-list a {
+.nav-link {
   text-decoration: none;
   text-align: center;
   padding: 8px 10px;
 }
 
-#nav-list a:hover {
+.nav-link:hover {
   text-shadow: 0 0 10px rgb(0, 64, 255);
-}
-
-#list-link {
-  font-weight: bold;
 }
 
 #add-new-link {
   border-left: 2px solid black;
   border-right: 2px solid black;
-  padding: 0 5px;
 }
 
 /* Date */
@@ -82,10 +87,6 @@ body {
 }
 
 /* Section 1 */
-#books {
-  display: inline-block;
-}
-
 #books-header {
   font-size: 45px;
   font-weight: bolder;
@@ -226,7 +227,6 @@ input {
 
 /* Section 3 */
 #contact {
-  /* max-width: max-content; */
   margin: 0 auto;
 }
 
@@ -240,4 +240,16 @@ input {
   border: 2px solid black;
   padding: 15px;
   margin: 0;
+}
+
+/* Toggle Classes */
+.show-section {
+  display: block;
+}
+
+.highlight-link {
+  color: rgb(88, 101, 181);
+  text-shadow: 0 0 5px blue;
+  font-weight: bold;
+  text-decoration: underline solid rgb(46 145 255) 5px;
 }

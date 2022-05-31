@@ -1,32 +1,18 @@
-import {
-  booksSection, addBookSection, contactSection, listLink, addNewLink, contactLink,
-} from './varibles.js';
+import { navLinks, sections, } from './varibles.js';
 
 // Single Page Application
 export default function showSection() {
-  if (window.location.hash === '#books') {
-    booksSection.style.display = 'block';
-    addBookSection.style.display = 'none';
-    contactSection.style.display = 'none';
-
-    listLink.style.fontWeight = 'bold';
-    addNewLink.style.fontWeight = 'normal';
-    contactLink.style.fontWeight = 'normal';
-  } else if (window.location.hash === '#form') {
-    addBookSection.style.display = 'block';
-    booksSection.style.display = 'none';
-    contactSection.style.display = 'none';
-
-    listLink.style.fontWeight = 'normal';
-    addNewLink.style.fontWeight = 'bold';
-    contactLink.style.fontWeight = 'normal';
-  } else if (window.location.hash === '#contact') {
-    contactSection.style.display = 'block';
-    booksSection.style.display = 'none';
-    addBookSection.style.display = 'none';
-
-    listLink.style.fontWeight = 'normal';
-    addNewLink.style.fontWeight = 'normal';
-    contactLink.style.fontWeight = 'bold';
-  }
+  let element;
+  navLinks.forEach((link, i) => {
+    if (
+      link.getAttribute('href')
+      === window.location.hash
+      ) {
+        element = i;
+    }
+    link.classList.remove('highlight-link');
+    sections[i].classList.remove('show-section');
+  });
+  navLinks[element].classList.toggle('highlight-link');
+  sections[element].classList.toggle('show-section');
 }
