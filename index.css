@@ -5,17 +5,6 @@
 /* General Styles */
 .section {
   display: none;
-  animation: transitionEffect 0.5s;
-}
-
-@keyframes transitionEffect {
-  from {
-    transform: translateX(-150%);
-  }
-
-  to {
-    transform: none;
-  }
 }
 
 body {
@@ -245,6 +234,17 @@ input {
 /* Toggle Classes */
 .show-section {
   display: block;
+  animation: appearEffect 0.5s;
+}
+
+@keyframes appearEffect {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: none;
+  }
 }
 
 .highlight-link {
@@ -252,4 +252,5 @@ input {
   text-shadow: 0 0 5px blue;
   font-weight: bold;
   text-decoration: underline solid rgb(46 145 255) 5px;
+  
 }

@@ -1,4 +1,4 @@
-import { navLinks, sections, inputTitle } from './varibles.js';
+import { navLinks, sections } from './varibles.js';
 
 // Single Page Application
 export default function showSection(hash = window.location.hash || '#books') {
@@ -9,7 +9,7 @@ export default function showSection(hash = window.location.hash || '#books') {
       === hash
       ) {
         element = i;
-    }
+    } 
     link.classList.remove('highlight-link');
     sections[i].classList.remove('show-section');
   });

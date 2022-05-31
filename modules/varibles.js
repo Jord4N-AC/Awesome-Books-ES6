@@ -1,6 +1,6 @@
 export const bookList = document.getElementById('book-list');
-export const inputTitle = document.querySelector('.title');
-export const inputAuthor = document.querySelector('.author');
+export const inputTitle = document.getElementById('title');
+export const inputAuthor = document.getElementById('author');
 export const addButton = document.getElementById('add-btn');
 export const alertMessage = document.getElementById('alert-message');
 

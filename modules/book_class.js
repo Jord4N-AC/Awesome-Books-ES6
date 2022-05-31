@@ -3,8 +3,6 @@ import {
 } from './varibles.js';
 import showSection from './shown_section.js';
 
-let theBooks = [];
-
 export default class BookObject {
   constructor(title, author, id) {
     this.title = title;
@@ -12,51 +10,46 @@ export default class BookObject {
     this.id = id;
   }
 
+  static theBooks = [];
+
   add() {
-    function creaateAndAppend(title, author, id) {
-      const bookContainer = document.createElement('div');
-      const infoContainer = document.createElement('div');
-      const titleBook = document.createElement('h5');
-      const authorBook = document.createElement('h5');
-      const idBook = document.createElement('h5');
-      const removeButton = document.createElement('button');
+    const bookContainer = document.createElement('div');
+    const infoContainer = document.createElement('div');
+    const titleBook = document.createElement('h5');
+    const authorBook = document.createElement('h5');
+    const idBook = document.createElement('h5');
+    const removeButton = document.createElement('button');
 
-      bookContainer.classList.add('book-container');
-      infoContainer.classList.add('book-info');
-      titleBook.classList.add('book-title');
-      authorBook.classList.add('book-author');
-      removeButton.classList.add('remove-btn');
+    bookContainer.classList.add('book-container');
+    infoContainer.classList.add('book-info');
+    titleBook.classList.add('book-title');
+    authorBook.classList.add('book-author');
+    removeButton.classList.add('remove-btn');
 
-      titleBook.innerHTML = `${title}&nbsp;`;
-      authorBook.innerHTML = `by ${author}&nbsp;`;
-      idBook.innerHTML = id;
-      removeButton.innerHTML = 'Remove';
+    titleBook.innerHTML = `${this.title}&nbsp;`;
+    authorBook.innerHTML = `by ${this.author}&nbsp;`;
+    idBook.innerHTML = this.id;
+    removeButton.innerHTML = 'Remove';
 
-      idBook.style.display = 'none';
+    idBook.style.display = 'none';
 
-      infoContainer.append(titleBook, authorBook, idBook);
-      bookContainer.append(infoContainer, removeButton);
-      bookList.append(bookContainer);
+    infoContainer.append(titleBook, authorBook, idBook);
+    bookContainer.append(infoContainer, removeButton);
+    bookList.append(bookContainer);
 
-      BookObject.remove(removeButton);
-    }
-    creaateAndAppend(this.title, this.author, this.id);
+    removeButton.addEventListener('click', BookObject.remove);
   }
 
-  static remove(element) {
-    function removeBook() {
-      theBooks = theBooks.filter((book) => +book.id
-        !== +this.parentNode.children[0].children[2].innerHTML);
-      this.parentNode.remove();
+  static remove() {
+    BookObject.theBooks = BookObject.theBooks.filter((book) => +book.id
+      !== +this.parentNode.children[0].children[2].innerHTML);
+    this.parentNode.remove();
 
-      theBooks.forEach((book, i) => {
-        bookList.children[i].children[0].children[2].innerHTML = i;
-        book.id = i;
-      });
-      localStorage.setItem('booksArray', JSON.stringify(theBooks));
-    }
-
-    element.addEventListener('click', removeBook);
+    BookObject.theBooks.forEach((book, i) => {
+      bookList.children[i].children[0].children[2].innerHTML = i;
+      book.id = i;
+    });
+    localStorage.setItem('booksArray', JSON.stringify(BookObject.theBooks));
   }
 
   static addBooks() {
@@ -64,11 +57,13 @@ export default class BookObject {
       inputTitle.value !== ''
         && inputAuthor.value !== ''
     ) {
-      const newBook = new BookObject(inputTitle.value, inputAuthor.value, theBooks.length);
+      const newBook = new BookObject(
+        inputTitle.value, inputAuthor.value, BookObject.theBooks.length
+        );
       newBook.add();
-      theBooks.push(newBook);
+      BookObject.theBooks.push(newBook);
 
-      localStorage.setItem('booksArray', JSON.stringify(theBooks));
+      localStorage.setItem('booksArray', JSON.stringify(BookObject.theBooks));
 
       inputTitle.value = '';
       inputAuthor.value = '';
@@ -79,12 +74,11 @@ export default class BookObject {
     }
   }
 
-  static loadBooks() {
-    const data = JSON.parse(localStorage.getItem('booksArray'));
-    if (data != null) {
+  static loadBooks(data = JSON.parse(localStorage.getItem('booksArray'))) {
+    if (data !== null) {
       data.forEach((book, i) => {
         const newBook = new BookObject(book.title, book.author, i);
-        newBook.add(); theBooks.push(newBook);
+        newBook.add(); BookObject.theBooks.push(newBook);
       });
     }
     showSection();
