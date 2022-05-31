@@ -3,6 +3,7 @@ export const inputTitle = document.getElementById('title');
 export const inputAuthor = document.getElementById('author');
 export const addButton = document.getElementById('add-btn');
 export const alertMessage = document.getElementById('alert-message');
+export const successMessage = document.getElementsByClassName('success-message')[0];
 
 // Single Page Application
 export const booksSection = document.getElementById('books');

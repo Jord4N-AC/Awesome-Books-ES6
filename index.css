@@ -162,6 +162,7 @@ form {
 
 /* Success Message */
 .success-message {
+  display: none;
   position: absolute;
   top: -10%;
   left: 0;
@@ -176,7 +177,7 @@ form {
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(116, 212, 92);
 
-  animation: fadein 0.3s ease-out;
+  animation: fadein 0.4s ease-out;
 }
 
 @keyframes fadein {
