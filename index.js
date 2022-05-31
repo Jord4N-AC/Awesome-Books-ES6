@@ -12,7 +12,9 @@ addButton.addEventListener('click', BookObject.addBooks);
 BookObject.loadBooks();
 
 // Single Page Application
-window.addEventListener('hashchange', showSection);
+window.addEventListener('hashchange', () => {
+    showSection();
+});
 
 // Date
 const now = DateTime.now();
