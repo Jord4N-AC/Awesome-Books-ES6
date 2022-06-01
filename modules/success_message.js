@@ -9,7 +9,5 @@ export default function showHideSuccessMessage(
         setTimeout(() => { successMessage.style.display = 'none'; }, 1400);
 
         bookList.children[newLegth - 1].classList.add('recent-added');
-    } else {
-        successMessage.style.display = 'none';
     }
 }

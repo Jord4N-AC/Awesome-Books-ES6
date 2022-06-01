@@ -12,6 +12,7 @@ export const contactSection = document.getElementById('contact');
 
 export const navLinks = document.querySelectorAll('.nav-link');
 export const sections = document.querySelectorAll('.section');
+export const bookCounter = document.getElementById('book-counter');
 
 // Date
 export const date = document.getElementById('date');

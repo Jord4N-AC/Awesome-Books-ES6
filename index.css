@@ -70,6 +70,7 @@ body {
 /* Book counter */
 /* --- */
 #book-counter {
+  display: none;
   position: absolute;
   top: -60%;
   left: -50%;
@@ -84,15 +85,17 @@ body {
   padding: 10px;
   border: 1px solid rgb(99, 143, 106);
   border-radius: 50%;
+}
+
+.highlight-counter {
   animation: show-counter 0.5s ease-out;
 }
 
 @keyframes show-counter {
   from {
-    transform: translateY(15%);
+    transform: translateY(-25%);
   }
   50% {
-    transform: none;
     box-shadow: 0 0 15px rgb(15, 231, 65);
     color: rgb(5, 255, 201);
   }
