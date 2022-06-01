@@ -1,15 +1,12 @@
-import { navLinks, sections } from './varibles.js';
-
-// Single Page Application
-export default function showSection(hash = window.location.hash || '#books') {
+// Show a Section after clicking a link and highlight the link
+export default function showSection(
+  navLinks, sections,
+  hash = window.location.hash || '#books',
+  ) {
   let element;
   navLinks.forEach((link, i) => {
-    if (
-      link.getAttribute('href')
-      === hash
-      ) {
-        element = i;
-    } 
+    if (link.getAttribute('href') === hash) element = i;
+    
     link.classList.remove('highlight-link');
     sections[i].classList.remove('show-section');
   });

@@ -287,6 +287,13 @@ input {
   color: rgb(88, 101, 181);
   text-shadow: 0 0 5px blue;
   font-weight: bold;
-  text-decoration: underline solid rgb(46 145 255) 5px;
-  
+  text-decoration: underline solid rgb(46 145 255) 5px;  
+}
+
+.recent-added {
+  box-shadow: 0 0 15px #13e308 inset;
+}
+
+.highlight-recent {
+  background-color: #dff2bf86;
 }
