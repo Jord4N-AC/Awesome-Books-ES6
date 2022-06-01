@@ -63,6 +63,44 @@ body {
   text-shadow: 0 0 10px rgb(0, 64, 255);
 }
 
+#list-link {
+  position: relative;
+}
+
+/* Book counter */
+/* --- */
+#book-counter {
+  position: absolute;
+  top: -60%;
+  left: -50%;
+
+  font-size: 18px;
+  font-weight: bolder;
+  line-height: 13px;
+  text-shadow: none;
+  color: rgb(27, 24, 24);
+  background-color: #cef093;
+
+  padding: 10px;
+  border: 1px solid rgb(99, 143, 106);
+  border-radius: 50%;
+  animation: show-counter 0.5s ease-out;
+}
+
+@keyframes show-counter {
+  from {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: none;
+    box-shadow: 0 0 15px rgb(15, 231, 65);
+    color: rgb(5, 255, 201);
+  }
+  to {
+    transform: translateY(10%);
+  }
+}
+
 #add-new-link {
   border-left: 2px solid black;
   border-right: 2px solid black;
