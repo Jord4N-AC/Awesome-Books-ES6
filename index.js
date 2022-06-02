@@ -8,7 +8,7 @@ import showHideSuccessMessage from './modules/success_message.js';
 import showRecentAdded from './modules/show_recent_added.js';
 import { showBookCounter, hideBookCounter } from './modules/book_counter.js';
 
-import { DateTime } from './modules/luxon.js';
+import { DateTime } from './modules/luxon.min.js';
 
 // Show message for empty fields
 addButton.addEventListener('mousedown', highLightMessage);
@@ -31,8 +31,9 @@ window.addEventListener('hashchange', () => {
 });
 
 // Date
-const now = DateTime.now();
-date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+setInterval((now = DateTime.now()) => {
+    date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+  }, 1000);
 
 // Load Content
 BookObject.loadBooks();
