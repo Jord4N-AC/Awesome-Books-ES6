@@ -1,8 +1,8 @@
 // Show a Section after clicking a link and highlight the link
-export default function showSection(
+ const showSection = (
   navLinks, sections,
   hash = window.location.hash || '#books',
-) {
+) => {
   let element;
   navLinks.forEach((link, i) => {
     if (link.getAttribute('href') === hash) element = i;
@@ -13,3 +13,5 @@ export default function showSection(
   navLinks[element].classList.add('highlight-link');
   sections[element].classList.add('show-section');
 }
+
+export default showSection;
