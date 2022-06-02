@@ -1,5 +1,5 @@
 import {
-  bookList, inputTitle, inputAuthor, alertMessage, navLinks, sections
+  bookList, inputTitle, inputAuthor, alertMessage, navLinks, sections,
 } from './varibles.js';
 import showSection from './shown_section.js';
 
@@ -58,8 +58,8 @@ export default class BookObject {
         && inputAuthor.value !== ''
     ) {
       const newBook = new BookObject(
-        inputTitle.value, inputAuthor.value, BookObject.theBooks.length
-        );
+        inputTitle.value, inputAuthor.value, BookObject.theBooks.length,
+      );
       newBook.add();
       BookObject.theBooks.push(newBook);
 

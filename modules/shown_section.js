@@ -2,11 +2,11 @@
 export default function showSection(
   navLinks, sections,
   hash = window.location.hash || '#books',
-  ) {
+) {
   let element;
   navLinks.forEach((link, i) => {
     if (link.getAttribute('href') === hash) element = i;
-    
+
     link.classList.remove('highlight-link');
     sections[i].classList.remove('show-section');
   });

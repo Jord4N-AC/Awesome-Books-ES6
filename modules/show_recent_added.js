@@ -4,17 +4,19 @@ let recentChecked;
 function scrollShowRecentAdded(allRecent = document.querySelectorAll('.recent-added')) {
   if (allRecent[0]) {
     setTimeout(() => { allRecent[0].scrollIntoView(); }, 900);
-    
-    setTimeout(() => { allRecent.forEach((recent) => {
-      recent.classList.toggle('highlight-recent');
+
+    setTimeout(() => {
+      allRecent.forEach((recent) => {
+        recent.classList.toggle('highlight-recent');
       });
     }, 1200);
 
-    setTimeout(() => { allRecent.forEach((recent) => {
-      recent.classList.toggle('highlight-recent');
-      }); 
+    setTimeout(() => {
+      allRecent.forEach((recent) => {
+        recent.classList.toggle('highlight-recent');
+      });
     }, 1500);
-    
+
     recentChecked = true;
   }
 }
@@ -29,16 +31,16 @@ function removeRecentAddedStyle(allRecent = document.querySelectorAll('.recent-a
   }
 }
 
-// Checks window.location.hash and executes either of functions above 
+// Checks window.location.hash and executes either of functions above
 export default function showRecentAdded(
-    navLinks, inputTitle,
-    hash = window.location.hash
-    ) {
+  navLinks, inputTitle,
+  hash = window.location.hash,
+) {
   if (hash === navLinks[0].getAttribute('href')) {
     scrollShowRecentAdded();
   } else if (hash !== navLinks[0].getAttribute('href')
     && recentChecked) {
-      removeRecentAddedStyle();
+    removeRecentAddedStyle();
   }
   if (hash === navLinks[1].getAttribute('href')) {
     inputTitle.focus();

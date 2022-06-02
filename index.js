@@ -1,5 +1,5 @@
 import {
-    bookList, inputTitle, addButton, navLinks, sections, successMessage, bookCounter, date,
+  bookList, inputTitle, addButton, navLinks, sections, successMessage, bookCounter, date,
 } from './modules/varibles.js';
 import BookObject from './modules/book_class.js';
 import { highLightMessage, noHighlightMessage } from './modules/alert_message.js';
@@ -16,24 +16,23 @@ addButton.addEventListener('mouseup', noHighlightMessage);
 
 // Add books, show a message and a counter after adding book
 addButton.addEventListener('click', () => {
-    const oldLength = bookList.children.length;
-    BookObject.addBooks();
-    showHideSuccessMessage(oldLength, bookList.childElementCount, bookList, successMessage);
-    showBookCounter(oldLength, bookList.childElementCount, bookCounter);
+  const oldLength = bookList.children.length;
+  BookObject.addBooks();
+  showHideSuccessMessage(oldLength, bookList.childElementCount, bookList, successMessage);
+  showBookCounter(oldLength, bookList.childElementCount, bookCounter);
 });
-
 
 // Single Page Application, show a section when clicking a link
 window.addEventListener('hashchange', () => {
-    showSection(navLinks, sections);
-    showRecentAdded(navLinks, inputTitle);
-    hideBookCounter(navLinks, bookCounter);
+  showSection(navLinks, sections);
+  showRecentAdded(navLinks, inputTitle);
+  hideBookCounter(navLinks, bookCounter);
 });
 
 // Date
 setInterval((now = DateTime.now()) => {
-    date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
-  }, 1000);
+  date.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+}, 1000);
 
 // Load Content
 BookObject.loadBooks();
