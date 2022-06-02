@@ -1,7 +1,1 @@
 node_modules
-#Webhint
-.hintrc
-#Stylelint
-.stylelintrc.json
-#ESLint
-.eslintrc.json
