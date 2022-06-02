@@ -1,5 +1,6 @@
 import {
-  bookList, inputTitle, addButton, navLinks, sections, successMessage, bookCounter, date,
+  bookList, inputTitle, inputAuthor, addButton, navLinks, sections,
+  alertMessage, successMessage, bookCounter, date,
 } from './modules/varibles.js';
 import BookObject from './modules/book_class.js';
 import { highLightMessage, noHighlightMessage } from './modules/alert_message.js';
@@ -17,7 +18,7 @@ addButton.addEventListener('mouseup', noHighlightMessage);
 // Add books, show a message and a counter after adding book
 addButton.addEventListener('click', () => {
   const oldLength = bookList.children.length;
-  BookObject.addBooks();
+  BookObject.addBooks(bookList, inputTitle, inputAuthor, alertMessage);
   showSuccessMessage(oldLength, bookList.childElementCount, bookList, successMessage);
   showBookCounter(oldLength, bookList.childElementCount, bookCounter);
 });
@@ -35,4 +36,4 @@ setInterval((now = DateTime.now()) => {
 }, 1000);
 
 // Load Content
-BookObject.loadBooks();
+BookObject.loadBooks(bookList, navLinks, sections, showSection);

@@ -1,8 +1,4 @@
-import {
-  bookList, inputTitle, inputAuthor, alertMessage, navLinks, sections,
-} from './varibles.js';
-import showSection from './shown_section.js';
-
+// Book Class and methods for adding books
 export default class BookObject {
   constructor(title, author, id) {
     this.title = title;
@@ -12,7 +8,7 @@ export default class BookObject {
 
   static theBooks = [];
 
-  add() {
+  add(bookList) {
     const bookContainer = document.createElement('div');
     const infoContainer = document.createElement('div');
     const titleBook = document.createElement('h5');
@@ -37,13 +33,15 @@ export default class BookObject {
     bookContainer.append(infoContainer, removeButton);
     bookList.append(bookContainer);
 
-    removeButton.addEventListener('click', BookObject.remove);
+    removeButton.addEventListener('click', (event) => {
+      BookObject.remove(event, bookList);
+    });
   }
 
-  static remove() {
+  static remove(event, bookList) {
     BookObject.theBooks = BookObject.theBooks.filter((book) => +book.id
-      !== +this.parentNode.children[0].children[2].innerHTML);
-    this.parentNode.remove();
+      !== +event.target.parentNode.children[0].children[2].innerHTML);
+      event.target.parentNode.remove();
 
     BookObject.theBooks.forEach((book, i) => {
       bookList.children[i].children[0].children[2].innerHTML = i;
@@ -52,7 +50,7 @@ export default class BookObject {
     localStorage.setItem('booksArray', JSON.stringify(BookObject.theBooks));
   }
 
-  static addBooks() {
+  static addBooks(bookList, inputTitle, inputAuthor, alertMessage) {
     if (
       inputTitle.value !== ''
         && inputAuthor.value !== ''
@@ -60,7 +58,7 @@ export default class BookObject {
       const newBook = new BookObject(
         inputTitle.value, inputAuthor.value, BookObject.theBooks.length,
       );
-      newBook.add();
+      newBook.add(bookList);
       BookObject.theBooks.push(newBook);
 
       localStorage.setItem('booksArray', JSON.stringify(BookObject.theBooks));
@@ -74,11 +72,14 @@ export default class BookObject {
     }
   }
 
-  static loadBooks(data = JSON.parse(localStorage.getItem('booksArray'))) {
+  static loadBooks(
+    bookList, navLinks, sections, showSection,
+    data = JSON.parse(localStorage.getItem('booksArray'))
+    ) {
     if (data !== null) {
       data.forEach((book, i) => {
         const newBook = new BookObject(book.title, book.author, i);
-        newBook.add(); BookObject.theBooks.push(newBook);
+        newBook.add(bookList); BookObject.theBooks.push(newBook);
       });
     }
     showSection(navLinks, sections);
