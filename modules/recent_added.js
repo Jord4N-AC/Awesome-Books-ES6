@@ -19,7 +19,7 @@ const scrollShowRecentAdded = (allRecent = document.querySelectorAll('.recent-ad
 
     recentChecked = true;
   }
-}
+};
 
 // Remove recent added style when clicking link2 or link2
 const removeRecentAddedStyle = (allRecent = document.querySelectorAll('.recent-added')) => {
@@ -29,7 +29,7 @@ const removeRecentAddedStyle = (allRecent = document.querySelectorAll('.recent-a
     });
     recentChecked = false;
   }
-}
+};
 
 // Checks window.location.hash and executes either of functions above
 const showRecentAdded = (
@@ -45,6 +45,6 @@ const showRecentAdded = (
   if (hash === navLinks[1].getAttribute('href')) {
     inputTitle.focus();
   }
-}
+};
 
 export default showRecentAdded;

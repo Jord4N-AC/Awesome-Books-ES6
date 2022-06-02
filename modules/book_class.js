@@ -41,7 +41,7 @@ export default class BookObject {
   static remove(event, bookList) {
     BookObject.theBooks = BookObject.theBooks.filter((book) => +book.id
       !== +event.target.parentNode.children[0].children[2].innerHTML);
-      event.target.parentNode.remove();
+    event.target.parentNode.remove();
 
     BookObject.theBooks.forEach((book, i) => {
       bookList.children[i].children[0].children[2].innerHTML = i;
@@ -74,8 +74,8 @@ export default class BookObject {
 
   static loadBooks(
     bookList, navLinks, sections, showSection,
-    data = JSON.parse(localStorage.getItem('booksArray'))
-    ) {
+    data = JSON.parse(localStorage.getItem('booksArray')),
+  ) {
     if (data !== null) {
       data.forEach((book, i) => {
         const newBook = new BookObject(book.title, book.author, i);

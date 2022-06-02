@@ -1,5 +1,5 @@
 // Show a Section after clicking a link and highlight the link
- const showSection = (
+const showSection = (
   navLinks, sections,
   hash = window.location.hash || '#books',
 ) => {
@@ -12,6 +12,6 @@
   });
   navLinks[element].classList.add('highlight-link');
   sections[element].classList.add('show-section');
-}
+};
 
 export default showSection;

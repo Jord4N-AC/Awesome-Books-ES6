@@ -3,7 +3,7 @@
 
 const hideSuccessMessage = (successMessage) => {
   setTimeout(() => { successMessage.style.display = 'none'; }, 1400);
-}
+};
 
 const showSuccessMessage = (
   oldLength, newLegth, bookList, successMessage,
@@ -14,6 +14,6 @@ const showSuccessMessage = (
 
     bookList.children[newLegth - 1].classList.add('recent-added');
   }
-}
+};
 
 export default showSuccessMessage;

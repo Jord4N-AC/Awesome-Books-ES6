@@ -9,11 +9,11 @@ export const showBookCounter = (
     bookCounter.style.display = 'initial';
     bookCounter.classList.add('highlight-counter');
   }
-}
+};
 
 // Remove counter when clicking link1
 export const hideBookCounter = (navLinks, bookCounter, hash = window.location.hash) => {
   if (hash === navLinks[0].getAttribute('href')) {
     bookCounter.style.display = 'none';
   }
-}
+};
