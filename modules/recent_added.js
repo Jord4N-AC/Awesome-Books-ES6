@@ -1,7 +1,7 @@
 let recentChecked;
 
 // Scroll to show recent added books and highlights them when clicking link1
-function scrollShowRecentAdded(allRecent = document.querySelectorAll('.recent-added')) {
+const scrollShowRecentAdded = (allRecent = document.querySelectorAll('.recent-added')) => {
   if (allRecent[0]) {
     setTimeout(() => { allRecent[0].scrollIntoView(); }, 900);
 
@@ -22,7 +22,7 @@ function scrollShowRecentAdded(allRecent = document.querySelectorAll('.recent-ad
 }
 
 // Remove recent added style when clicking link2 or link2
-function removeRecentAddedStyle(allRecent = document.querySelectorAll('.recent-added')) {
+const removeRecentAddedStyle = (allRecent = document.querySelectorAll('.recent-added')) => {
   if (allRecent.length > 0) {
     allRecent.forEach((recent) => {
       recent.classList.remove('recent-added');
@@ -32,10 +32,10 @@ function removeRecentAddedStyle(allRecent = document.querySelectorAll('.recent-a
 }
 
 // Checks window.location.hash and executes either of functions above
-export default function showRecentAdded(
+export const showRecentAdded = (
   navLinks, inputTitle,
   hash = window.location.hash,
-) {
+) => {
   if (hash === navLinks[0].getAttribute('href')) {
     scrollShowRecentAdded();
   } else if (hash !== navLinks[0].getAttribute('href')
