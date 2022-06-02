@@ -32,7 +32,7 @@ const removeRecentAddedStyle = (allRecent = document.querySelectorAll('.recent-a
 }
 
 // Checks window.location.hash and executes either of functions above
-export const showRecentAdded = (
+const showRecentAdded = (
   navLinks, inputTitle,
   hash = window.location.hash,
 ) => {
@@ -46,3 +46,5 @@ export const showRecentAdded = (
     inputTitle.focus();
   }
 }
+
+export default showRecentAdded;

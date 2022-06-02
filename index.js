@@ -5,7 +5,7 @@ import BookObject from './modules/book_class.js';
 import { highLightMessage, noHighlightMessage } from './modules/alert_message.js';
 import showSection from './modules/shown_section.js';
 import showSuccessMessage from './modules/success_message.js';
-import { showRecentAdded } from './modules/recent_added.js';
+import showRecentAdded from './modules/recent_added.js';
 import { showBookCounter, hideBookCounter } from './modules/book_counter.js';
 
 import { DateTime } from './modules/luxon.min.js';
