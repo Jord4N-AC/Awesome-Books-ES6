@@ -1,16 +1,18 @@
-export const addButton = document.querySelector('#add-btn');
-export const bookList = document.getElementsByClassName('book-list')[0];
-export const inputTitle = document.querySelector('.title');
-export const inputAuthor = document.querySelector('.author');
-export const alertMessage = document.querySelector('#alert-message');
+export const bookList = document.getElementById('book-list');
+export const inputTitle = document.getElementById('title');
+export const inputAuthor = document.getElementById('author');
+export const addButton = document.getElementById('add-btn');
+export const alertMessage = document.getElementById('alert-message');
+export const successMessage = document.getElementsByClassName('success-message')[0];
 
 // Single Page Application
 export const booksSection = document.getElementById('books');
 export const addBookSection = document.getElementById('form');
 export const contactSection = document.getElementById('contact');
-export const listLink = document.getElementById('list-link');
-export const addNewLink = document.getElementById('add-new-link');
-export const contactLink = document.getElementById('contact-link');
+
+export const navLinks = document.querySelectorAll('.nav-link');
+export const sections = document.querySelectorAll('.section');
+export const bookCounter = document.getElementById('book-counter');
 
 // Date
 export const date = document.getElementById('date');

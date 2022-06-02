@@ -1,32 +1,17 @@
-import {
-  booksSection, addBookSection, contactSection, listLink, addNewLink, contactLink,
-} from './varibles.js';
+// Show a Section after clicking a link and highlight the link
+const showSection = (
+  navLinks, sections,
+  hash = window.location.hash || '#books',
+) => {
+  let element;
+  navLinks.forEach((link, i) => {
+    if (link.getAttribute('href') === hash) element = i;
 
-// Single Page Application
-export default function showSection() {
-  if (window.location.hash === '#books-header') {
-    booksSection.style.display = 'block';
-    addBookSection.style.display = 'none';
-    contactSection.style.display = 'none';
+    link.classList.remove('highlight-link');
+    sections[i].classList.remove('show-section');
+  });
+  navLinks[element].classList.add('highlight-link');
+  sections[element].classList.add('show-section');
+};
 
-    listLink.style.fontWeight = 'bold';
-    addNewLink.style.fontWeight = 'normal';
-    contactLink.style.fontWeight = 'normal';
-  } else if (window.location.hash === '#form') {
-    addBookSection.style.display = 'block';
-    booksSection.style.display = 'none';
-    contactSection.style.display = 'none';
-
-    listLink.style.fontWeight = 'normal';
-    addNewLink.style.fontWeight = 'bold';
-    contactLink.style.fontWeight = 'normal';
-  } else if (window.location.hash === '#contact') {
-    contactSection.style.display = 'block';
-    booksSection.style.display = 'none';
-    addBookSection.style.display = 'none';
-
-    listLink.style.fontWeight = 'normal';
-    addNewLink.style.fontWeight = 'normal';
-    contactLink.style.fontWeight = 'bold';
-  }
-}
+export default showSection;
