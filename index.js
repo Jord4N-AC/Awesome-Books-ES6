@@ -8,7 +8,7 @@ import showHideSuccessMessage from './modules/success_message.js';
 import showRecentAdded from './modules/show_recent_added.js';
 import { showBookCounter, hideBookCounter } from './modules/book_counter.js';
 
-import { DateTime } from './node_modules/luxon/src/luxon.js';
+import { DateTime } from './modules/luxon.js';
 
 // Show message for empty fields
 addButton.addEventListener('mousedown', highLightMessage);
