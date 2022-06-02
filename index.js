@@ -4,7 +4,7 @@ import {
 import BookObject from './modules/book_class.js';
 import { highLightMessage, noHighlightMessage } from './modules/alert_message.js';
 import showSection from './modules/shown_section.js';
-import showHideSuccessMessage from './modules/success_message.js';
+import showSuccessMessage from './modules/success_message.js';
 import { showRecentAdded } from './modules/recent_added.js';
 import { showBookCounter, hideBookCounter } from './modules/book_counter.js';
 
@@ -18,7 +18,7 @@ addButton.addEventListener('mouseup', noHighlightMessage);
 addButton.addEventListener('click', () => {
   const oldLength = bookList.children.length;
   BookObject.addBooks();
-  showHideSuccessMessage(oldLength, bookList.childElementCount, bookList, successMessage);
+  showSuccessMessage(oldLength, bookList.childElementCount, bookList, successMessage);
   showBookCounter(oldLength, bookList.childElementCount, bookCounter);
 });
 
