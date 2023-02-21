@@ -1,3 +1,4 @@
+import { DateTime } from './modules/luxon.min.js';
 import {
   bookList, inputTitle, inputAuthor, addButton, navLinks, sections,
   alertMessage, successMessage, bookCounter, date,
@@ -8,8 +9,6 @@ import showSection from './modules/shown_section.js';
 import showSuccessMessage from './modules/success_message.js';
 import showRecentAdded from './modules/recent_added.js';
 import { showBookCounter, hideBookCounter } from './modules/book_counter.js';
-
-import { DateTime } from './modules/luxon.min.js';
 
 // Show message for empty fields
 addButton.addEventListener('mousedown', highLightMessage);

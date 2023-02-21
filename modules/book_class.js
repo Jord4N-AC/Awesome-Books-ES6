@@ -8,7 +8,7 @@ export default class BookObject {
 
   static theBooks = [];
 
-  add(bookList) {
+  add = (bookList) => {
     const bookContainer = document.createElement('div');
     const infoContainer = document.createElement('div');
     const titleBook = document.createElement('h5');
@@ -38,7 +38,7 @@ export default class BookObject {
     });
   }
 
-  static remove(event, bookList) {
+  static remove = (event, bookList) => {
     BookObject.theBooks = BookObject.theBooks.filter((book) => +book.id
       !== +event.target.parentNode.children[0].children[2].innerHTML);
     event.target.parentNode.remove();
@@ -50,7 +50,7 @@ export default class BookObject {
     localStorage.setItem('booksArray', JSON.stringify(BookObject.theBooks));
   }
 
-  static addBooks(bookList, inputTitle, inputAuthor, alertMessage) {
+  static addBooks = (bookList, inputTitle, inputAuthor, alertMessage) => {
     if (
       inputTitle.value !== ''
         && inputAuthor.value !== ''
@@ -72,10 +72,10 @@ export default class BookObject {
     }
   }
 
-  static loadBooks(
+  static loadBooks = (
     bookList, navLinks, sections, showSection,
     data = JSON.parse(localStorage.getItem('booksArray')),
-  ) {
+  ) => {
     if (data !== null) {
       data.forEach((book, i) => {
         const newBook = new BookObject(book.title, book.author, i);
