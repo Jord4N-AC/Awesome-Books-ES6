@@ -7,7 +7,7 @@ export default class BookObject {
   }
 
   static theBooks = [];
- 
+
   add = (bookList) => {
     const bookContainer = document.createElement('div');
     const infoContainer = document.createElement('div');
